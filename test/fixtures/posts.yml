@@ -1,0 +1,11 @@
+initial:
+  title: "This is my new blog"
+  body: "I hope to update it frequently"
+
+class:
+  title: "I'm taking a Rails class"
+  body: "It's in Seattle"
+
+drunken:
+  title: "Drunken Rant"
+  body: "rant rant rant rant"

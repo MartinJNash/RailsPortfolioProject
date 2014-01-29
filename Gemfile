@@ -16,4 +16,5 @@ end
 group :test, :development do
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
+  gem 'turn'
 end

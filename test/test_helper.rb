@@ -5,15 +5,16 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 
 
-# Uncomment for awesome colorful output
-require "minitest/pride"
-
 class ActiveSupport::TestCase
   fixtures :all
 end
 
+
+# Make the integration tests use features
 class ActionDispatch::IntegrationTest
   include Rails.application.routes.url_helpers
-  # include Capybara::RspecMatchers
   include Capybara::DSL
 end
+
+
+Turn.config.format = :cue

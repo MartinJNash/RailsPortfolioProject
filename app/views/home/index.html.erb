@@ -1,13 +1,62 @@
-<h1>Welcome to my portfolio</h1>
+  <% content_for :title, "About | Martin Nash" %>
 
-<p>I'm Martin Nash, a mobile and web app developer based in Seattle.</p>
+  <!-- End Top Bar -->
+  <div class="row">
 
-<p>Contact me about the following technologies:</p>
 
-<ul>
-  <li>iPhone</li>
-  <li>OS X</li>
-  <li>Ruby</li>
-  <li>Rails</li>
-</ul>
+    <div class="large-12 columns">
+
+      <!-- Content Slider -->
+      <!-- Add more images to have a slider -->
+      <!-- <div class="row">
+        <div class="large-12 hide-for-small">
+          <div id="featured" data-orbit>
+              <img src="http://placehold.it/1200x500&text=Slide Image 1" alt="slide image">
+          </div>
+        </div>
+      </div> -->
+      <!-- End Content Slider -->
+      <!-- Mobile Header -->
+        <!-- <div class="row">
+          <div class="large-12 columns show-for-small">
+            <img src="http://placehold.it/1200x700&text=Mobile Header">
+          </div>
+        </div><br> -->
+      <!-- End Mobile Header -->
+
+
+      <!-- MAIN BODY -->
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="row">
+
+
+            <!-- LEFT AREA -->
+            <div class="large-8 small-12 columns">
+              <h4>About</h4>
+                <p>I'm Martin Nash, a mobile and web developer based half in Seattle and half in Japan.</p>
+                <p>Contact me for iOS, OS X, and Ruby on Rails projetcts.</p>
+            </div>
+
+
+            <!-- BLOG FEED -->
+            <div class="large-4 small-12 columns">
+              <h4>Blog Posts</h4>
+              <hr>
+              <% Post.limit(2).each do |post| %>
+                <div class="panel">
+                  <h5><a href="<%= post_path(post) %>"><%= post.title %></a></h5>
+                  <h6 class="subheader">
+                    <%= post.body.truncate(50) %>
+                  </h6>
+                  <h6><a href="#">Read More »</a></h6>
+                </div>
+              <% end %>
+              <a href="#" class="right">Go To Blog »</a>
+            <!-- End Feed -->
+
+          </div>
+        </div>
+      </div>
+    <!-- End Content -->
 

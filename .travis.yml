@@ -11,7 +11,7 @@ script:
   - bundle exec rspec spec/
 before_script:
   - mysql -e 'create database my_app_test'
-  - psql -c "CREATE USER nash WITH PASSWORD 'nash';"
-  - psql -c 'create database portfolio_test' -U nash
+  - psql -c "CREATE USER nash WITH PASSWORD 'nash';" -U postgres
+  - psql -c 'create database portfolio_test;' -U postgres
 bundler_args: --binstubs=./bundler_stubs
 cache: bundler

@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'rails', '4.0.1'
+
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
-gem 'rails', '4.0.1'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
@@ -18,4 +19,9 @@ group :test, :development do
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'turn'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end

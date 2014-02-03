@@ -6,6 +6,7 @@ gem 'rails', '4.0.1'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
+gem 'minitest-rails'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
@@ -16,8 +17,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test, :development do
-  gem 'minitest-rails'
+group :test do
   gem 'minitest-rails-capybara'
   gem 'turn'
 end

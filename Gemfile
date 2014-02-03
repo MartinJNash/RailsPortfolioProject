@@ -5,7 +5,7 @@ gem 'rails', '4.0.1'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
-gem 'sqlite3'
+gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
@@ -22,6 +22,5 @@ group :test, :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end

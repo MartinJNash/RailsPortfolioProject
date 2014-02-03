@@ -1,9 +1,8 @@
 require "test_helper"
 
 feature "Check For Zurb" do
-  scenario "the test is sound" do
-
+  scenario "confirm that the layout is in Zurb" do
     visit root_path
-    page.must_have_content "columns"
+    page.must_have_css(".columns")
   end
 end

@@ -17,4 +17,4 @@ class ActionDispatch::IntegrationTest
 end
 
 
-Turn.config.format = :cue
+# Turn.config.format = :cue

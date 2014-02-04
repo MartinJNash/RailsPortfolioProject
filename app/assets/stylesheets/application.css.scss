@@ -12,3 +12,11 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+.row.extra-padding-top {
+    padding-top: 40px;
+}
+
+.mjn-footer {
+  padding-top: 40px;
+}

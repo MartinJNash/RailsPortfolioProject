@@ -1,62 +1,45 @@
   <% content_for :title, "About | Martin Nash" %>
 
-  <!-- End Top Bar -->
-  <div class="row">
 
 
-    <div class="large-12 columns">
 
-      <!-- Content Slider -->
-      <!-- Add more images to have a slider -->
-      <!-- <div class="row">
-        <div class="large-12 hide-for-small">
-          <div id="featured" data-orbit>
-              <img src="http://placehold.it/1200x500&text=Slide Image 1" alt="slide image">
+<!-- About Content -->
+<div class="row extra-padding-top">
+
+  <!-- MAIN CONTENT -->
+  <div class="small-12 medium-10 columns">
+    <h4>About Me</h4>
+    <p>Hi. I'm Martin Nash I live in Seattle, work for a Bay-Area company, make Mac and iOS apps, and even teach how to do that stuff.</p>
+    <p>I'm currently taking the UW's Ruby on Rails certificate program, and made this site in Rails!</p>
+  </div>
+
+  <div class="small-12 medium-2 columns">
+    <a class="th" href="#">
+      <%= image_tag "martin_nash.jpg" %>
+    </a>
+  </div>
+
+</div><!-- End Content -->
+
+
+<!-- BLOG FEED -->
+<div class="row extra-padding-top">
+  <div class="small-12 columns">
+    <h4>Recent Blog Posts</h4>
+    <ul class="small-block-grid-2 medium-block-grid-3">
+      <% Post.limit(3).each do |post| %>
+        <li>
+          <div class="panel">
+            <h5><a href="<%= post_path(post) %>"><%= post.title %></a></h5>
+            <h6 class="subheader">
+              <%= post.body.truncate(50) %>
+            </h6>
+            <h6><a href="#">Read More »</a></h6>
           </div>
-        </div>
-      </div> -->
-      <!-- End Content Slider -->
-      <!-- Mobile Header -->
-        <!-- <div class="row">
-          <div class="large-12 columns show-for-small">
-            <img src="http://placehold.it/1200x700&text=Mobile Header">
-          </div>
-        </div><br> -->
-      <!-- End Mobile Header -->
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div><!-- End Feed -->
 
-
-      <!-- MAIN BODY -->
-      <div class="row">
-        <div class="large-12 columns">
-          <div class="row">
-
-
-            <!-- LEFT AREA -->
-            <div class="large-8 small-12 columns">
-              <h4>About</h4>
-                <p>I'm Martin Nash, a mobile and web developer based half in Seattle and half in Japan.</p>
-                <p>Contact me for iOS, OS X, and Ruby on Rails projetcts.</p>
-            </div>
-
-
-            <!-- BLOG FEED -->
-            <div class="large-4 small-12 columns">
-              <h4>Blog Posts</h4>
-              <hr>
-              <% Post.limit(2).each do |post| %>
-                <div class="panel">
-                  <h5><a href="<%= post_path(post) %>"><%= post.title %></a></h5>
-                  <h6 class="subheader">
-                    <%= post.body.truncate(50) %>
-                  </h6>
-                  <h6><a href="#">Read More »</a></h6>
-                </div>
-              <% end %>
-              <a href="#" class="right">Go To Blog »</a>
-            <!-- End Feed -->
-
-          </div>
-        </div>
-      </div>
-    <!-- End Content -->
 

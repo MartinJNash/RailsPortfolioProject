@@ -11,59 +11,39 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body class="<%= params[:controller] %>">
 
-
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <!-- Title Area -->
-      <li class="name">
-        <h1><a href="#">Martin J Nash</a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-    </ul>
-
-    <!-- Right Nav Section -->
-    <section class="top-bar-section">
-      <ul class="right">
-
-        <li class="divider"></li>
-        <li><a href="/">About</a></li>
-
-        <li class="divider"></li>
-        <li><a href="posts">Blog</a></li>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="#">Martin J Nash</a></h1>
+        </li>
       </ul>
-    </section>
-  </nav>
 
-
-  <div class="row">
-    <div class="large-12 columns">
-      <%= yield %>
-    </div>
-  </div>
-
-
-
-  <!-- Footer -->
-  <footer class="row">
-    <div class="large-12 columns"><hr>
-      <div class="row">
-        <div class="large-6 columns">
-            <p>© Copyright Martin J Nash. <%= Time.now.year %>.</p>
-        </div>
-        <div class="large-6 small-12 columns">
-          <ul class="inline-list right">
+      <!-- Right Nav Section -->
+      <div class="small-12">
+        <section class="top-bar-section">
+          <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/posts">Posts</a></li>
+            <li><a href="posts">Blog</a></li>
           </ul>
-        </div>
+        </section>
       </div>
-    </div>
-  </footer>
-  <!-- End Footer -->
+    </nav>
 
 
-  <%= javascript_include_tag "application" %>
+
+
+
+
+    <!-- MAIN CONTENT -->
+    <%= yield %>
+
+
+
+
+
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

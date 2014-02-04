@@ -35,8 +35,8 @@
 // $total-columns: 12;
 
 // We use these to control various global styles
-// $body-bg: #fff;
-// $body-font-color: #222;
+$body-bg: rgb(255, 254, 250);
+$body-font-color: #484848;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -1012,16 +1012,16 @@
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+// $topbar-bg-color: green;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 100px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+// $topbar-title-weight: bold;
+// $topbar-title-font-size: rem-calc(25);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
@@ -1069,7 +1069,7 @@
 
 // Divider Styles
 // $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
-// $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+// $topbar-divider-border-top: solid 10px scale-color($topbar-bg-color, $lightness: -50%);
 
 // Sticky Class
 // $topbar-sticky-class: ".sticky";

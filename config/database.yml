@@ -4,8 +4,8 @@ development:
   pool: 5
   timeout: 5000
   host: localhost
-  username: nash
-  password: nash
+  username: postgres
+  password: postgres
 
 test:
   adapter: postgresql
@@ -13,8 +13,8 @@ test:
   pool: 5
   timeout: 5000
   host: localhost
-  username: nash
-  password: nash
+  username: postgres
+  password: postgres
 
 
 production:

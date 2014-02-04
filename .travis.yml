@@ -10,8 +10,8 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rspec spec/
 before_script:
-  - mysql -e 'create database my_app_test'
   - psql -c "CREATE USER nash WITH PASSWORD 'nash';" -U postgres
-  - psql -c 'create database portfolio_test;' -U postgres
+  - psql -c 'CREATE DATABASE portfolio_test;' -U postgres
+  - psql -c 'GRANT ALL PRIVILEGES ON DATABASE portfolio_test TO nash'
 bundler_args: --binstubs=./bundler_stubs
 cache: bundler

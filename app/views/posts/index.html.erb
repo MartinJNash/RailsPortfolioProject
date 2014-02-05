@@ -1,25 +1,18 @@
-<div class="row extra-padding-top">
+<% content_for :boinkers do %>
+  <h1>This is totally boinkers, dude!</h1>
+<% end %>
 
+
+<div class="row extra-padding-top">
 
   <div class="small-12 columns">
     <h1>Posts</h1>
     <% @posts.each do |post| %>
-      <div id="<%= "post-#{post.id}" %>" class="row">
-
-        <div class="small-9 columns">
-          <h4><a href="<%= post_path(post) %>"><%= post.title %></a></h4>
-          <p><%= post.body %></p>
-        </div>
-
-        <div class="columns small-3">
-          <%= link_to 'Edit', edit_post_path(post) %>
-          <%= link_to 'Destroy', post, id: "delete_post_#{post.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
-
-      </div>
+      <%= render partial: 'individual_post', locals: {post: post} %>
     <% end %>
   </div>
 </div>
+
 
 
 <div class="row extra-padding-top">

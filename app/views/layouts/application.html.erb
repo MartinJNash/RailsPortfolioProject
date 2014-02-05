@@ -3,47 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title><%= content_for?(:title) ? yield(:title) : "Martin Nash" %></title>
-
     <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body class="<%= params[:controller] %>">
 
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-          <h1><a href="#">Martin J Nash</a></h1>
-        </li>
-      </ul>
-
-      <!-- Right Nav Section -->
-      <div class="small-12">
-        <section class="top-bar-section">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="posts">Blog</a></li>
-          </ul>
-        </section>
-      </div>
-    </nav>
-
-
-
-
-
-
-    <!-- MAIN CONTENT -->
+    <%= render 'layouts/header' %>
     <%= yield %>
 
-
-
-
-
-    <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -1,0 +1,13 @@
+      <div id="<%= "post-#{post.id}" %>" class="row">
+
+        <div class="small-9 columns">
+          <h4><a href="<%= post_path(post) %>"><%= post.title %></a></h4>
+          <p><%= simple_format post.body.truncate(500) %></p>
+        </div>
+
+        <div class="columns small-3">
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Destroy', post, id: "delete_post_#{post.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+
+      </div>

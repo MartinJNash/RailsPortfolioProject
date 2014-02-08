@@ -1,0 +1,22 @@
+<h2>New Project</h2>
+
+<%= form_for @project do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :technologies_used %>
+    <%= f.text_field :technologies_used %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
+
+<%= link_to "Back", projects_path  %>

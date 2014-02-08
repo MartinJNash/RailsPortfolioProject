@@ -3,9 +3,7 @@ development:
   database: portfolio_development
   pool: 5
   timeout: 5000
-  host: localhost
-  username: postgres
-  password: postgres
+
 
 
 test:
@@ -13,9 +11,7 @@ test:
   database: portfolio_test
   pool: 5
   timeout: 5000
-  host: localhost
-  username: postgres
-  password: postgres
+
 
 
 production:

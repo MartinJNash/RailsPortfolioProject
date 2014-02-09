@@ -1,0 +1,7 @@
+portfolio:
+  name: "Rails Portfolio"
+  technologies_used: "Ruby, Rails, Zurb"
+
+ywk:
+  name: "Yes, We Kansai"
+  technologies_used: "Ruby, Rails, Cocoa"

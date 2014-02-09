@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  before_action :set_project, only: [:show, :edit, :update] 
+
   def index
     @projects = Project.all
   end  
@@ -14,15 +16,30 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Successfully created project"
       redirect_to @project
     else
-      # IMPLEMENT ME
+      flash.now[:error] = "Project could not be saved"
+      render :new
     end
   end
 
   def show
-    @project = Project.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @project.update_attributes(project_params)
+      redirect_to @project, notice: "Project was successfully updated."
+    else
+      render :edit
+    end
   end
 
 private
+
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
   def project_params
     params.require(:project).permit(:name, :technologies_used)

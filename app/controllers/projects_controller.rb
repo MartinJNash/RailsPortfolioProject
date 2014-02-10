@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  before_action :set_project, only: [:show, :edit, :update] 
+  before_action :set_project, only: [:show, :edit, :update, :destroy] 
 
   def index
     @projects = Project.all
@@ -32,6 +32,13 @@ class ProjectsController < ApplicationController
       redirect_to @project, notice: "Project was successfully updated."
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @project.destroy
+      flash[:notice] = "Successfully deleted project."
+      redirect_to posts_path
     end
   end
 

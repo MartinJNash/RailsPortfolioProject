@@ -2,3 +2,4 @@
 
 <h2><%= @project.name %></h2>
 <p>Technologies used: <%= @project.technologies_used %></p>
+<%= link_to "Delete", @project, method: :delete, data: {confirm: "Do you really want to delete this project?"} %>

@@ -8,7 +8,7 @@
           <div class="panel">
             <h5><a href="<%= post_path(post) %>"><%= post.title %></a></h5>
             <h6 class="subheader">
-              <%= post.body.truncate(50) %>
+              <%= post.body.truncate(50, separator: ' ') %>
             </h6>
             <h6><a href="#">Read More »</a></h6>
           </div>

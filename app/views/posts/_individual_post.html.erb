@@ -2,7 +2,7 @@
 
         <div class="small-9 columns">
           <h4><a href="<%= post_path(post) %>"><%= post.title %></a></h4>
-          <p><%= simple_format post.body.truncate(500) %></p>
+          <p><%= simple_format post.body.truncate(500, separator: ' ') %></p>
         </div>
 
         <div class="columns small-3">

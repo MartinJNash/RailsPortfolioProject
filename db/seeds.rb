@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'lorem'
+require 'faker'
+
+100.times do |num|
+  body = Lorem::Base.new('paragraphs', num % 20 + 1).output
+  title = Faker::Name.name
+  Post.create(title: title, body: body)
+end
+

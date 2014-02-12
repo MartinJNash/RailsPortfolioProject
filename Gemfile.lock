@@ -43,6 +43,8 @@ GEM
     coffee-script-source (1.6.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    faker (1.2.0)
+      i18n (~> 0.5)
     foundation-rails (5.0.3.1)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -55,6 +57,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    lorem (0.1.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -142,9 +145,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  faker
   foundation-rails
   jbuilder (~> 1.2)
   jquery-rails
+  lorem
   minitest-rails
   minitest-rails-capybara
   pg

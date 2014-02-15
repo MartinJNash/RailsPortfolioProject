@@ -1,11 +1,20 @@
 initial:
   title: "This is my new blog"
   body: "I hope to update it frequently"
+  author: one
 
 class:
   title: "I'm taking a Rails class"
   body: "It's in Seattle"
+  author: one
 
 drunken:
   title: "Drunken Rant"
   body: "rant rant rant rant"
+  author: one
+
+one:
+  title: "First post"
+  body: "This is my first post!"
+  author: one
+

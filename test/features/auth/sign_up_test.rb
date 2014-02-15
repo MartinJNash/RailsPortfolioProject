@@ -18,7 +18,6 @@ feature "Create an account" do
     click_on "Sign up"
 
     # Then I will be redirected to a welcome page
-    puts page.source
     page.must_have_content "success"
   end
 end

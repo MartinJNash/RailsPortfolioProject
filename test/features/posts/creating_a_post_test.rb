@@ -5,7 +5,8 @@ feature "Creating a post" do
 
     the_post = posts(:class)
 
-    # Given a completed new post from
+    # Given an authorized user completes a new post form
+    sign_in
     visit new_post_path
     fill_in "Title", with: the_post.title
     fill_in "Body", with: the_post.body
@@ -16,6 +17,8 @@ feature "Creating a post" do
     # Then a new post should be created and displayed
     page.text.must_include the_post.title
     page.text.must_include the_post.body
+    page.has_css? "#author"
+    page.text.must_include users(:one).email
   end
 end
 

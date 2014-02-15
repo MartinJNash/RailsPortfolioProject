@@ -5,11 +5,7 @@ feature "As a user, I want to sign out to protect my privacy" do
   scenario "sign out of service" do
 
     # Given I have a signed in user
-    user = users(:one)
-    visit new_user_session_path
-    fill_in "Email", with: user.email
-    fill_in "Password", with: 'password'
-    find("form").click_on "Sign in"
+    sign_in
 
     # When I click on sign out
     click_on "Sign out"

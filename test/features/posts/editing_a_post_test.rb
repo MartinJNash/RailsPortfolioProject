@@ -4,8 +4,8 @@ feature "Editing A Post" do
   scenario "submit updates to an existing post" do
 
     # Given an existing post
-    post = Post.create(title: "An OK post", body: "This is OK. I guess...")
-    visit post_path(post)
+    sign_in
+    visit post_path(posts(:one))
 
     # When I click edit and submit changed data
     click_on "Edit"

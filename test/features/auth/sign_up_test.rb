@@ -13,10 +13,12 @@ feature "Create an account" do
 
     # When I register with correct information
     fill_in "Email", with: "test@example.com"
-    fill_in "Password", with: "pw1234"
-    click_on "Create!"
+    fill_in "Password", with: "pw1234GOOD"
+    fill_in "Password confirmation", with: "pw1234GOOD"
+    click_on "Sign up"
 
     # Then I will be redirected to a welcome page
+    puts page.source
     page.must_have_content "success"
   end
 end

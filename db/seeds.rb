@@ -9,9 +9,12 @@
 require 'lorem'
 require 'faker'
 
-100.times do |num|
+yes_auth = User.create(email: "authorized@example.com", password: "password")
+not_auth = User.create(email: "notauthorized@example.com", password: "password")
+
+50.times do |num|
   body = Lorem::Base.new('paragraphs', num % 20 + 1).output
   title = Faker::Name.name
-  Post.create(title: title, body: body)
+  Post.create(title: title, body: body, author: yes_auth)
 end
 

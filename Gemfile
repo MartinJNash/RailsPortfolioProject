@@ -15,7 +15,6 @@ gem 'foundation-rails'
 
 
 gem 'mina'
-# gem 'mina-puma'
 
 group :doc do
   gem 'sdoc', require: false
@@ -23,7 +22,6 @@ end
 
 group :test do
   gem 'minitest-rails-capybara'
-  # gem 'turn'
 end
 
 group :production do

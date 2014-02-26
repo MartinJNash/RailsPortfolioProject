@@ -17,8 +17,10 @@ set :branch, 'master'
 
 
 
-set :pid_file, '/var/run/test_baba.pid'
-set :sock_file, 'unix:///var/run/test_baba.sock'
+# set :pid_file, '/var/run/test_baba.pid'
+# set :sock_file, 'unix:///var/run/test_baba.sock'
+set :pid_file,         "#{deploy_to}/tmp/pids/puma.pid"
+set :sock_file, "unix://#{deploy_to}/tmp/sockets/puma.sock"
 
 
 
@@ -33,7 +35,7 @@ set :ssh_options, '-A'
 
 task :environment do
   set :rvm_path, "/usr/local/rvm/bin/rvm"
-  invoke :'rvm:use[ruby-2.0.0-p353@default]'
+  invoke :'rvm:use[2.0.0]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
@@ -91,7 +93,7 @@ task :stop => :environment do
 end
 
 task :start => :environment do
-  queue "cd #{deploy_to}; puma -e production -d --pidfile #{pid_file} -b #{sock_file}"
+  queue "cd #{deploy_to} && puma -e production -d --pidfile #{pid_file} -b #{sock_file}"
   queue 'nginx'
 end
 

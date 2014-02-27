@@ -1,22 +1,26 @@
 initial:
   title: "This is my new blog"
   body: "I hope to update it frequently"
-  author: author
+  author: one
+  published: true
 
 class:
   title: "I'm taking a Rails class"
   body: "It's in Seattle"
-  author: author
+  author: one
+  published: true
 
 drunken:
   title: "Drunken Rant"
   body: "rant rant rant rant"
   author: author
+  published: true
 
 one:
   title: "First post"
   body: "This is my first post!"
   author: author
+  published: true
 
 nopub:
   title: "Censorship"

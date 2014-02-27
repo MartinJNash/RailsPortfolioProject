@@ -6,6 +6,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    if current_user.author?
+      @posts = @posts.where(author_id: current_user.id)
+    end
   end
 
   # GET /posts/1

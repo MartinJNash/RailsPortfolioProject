@@ -15,11 +15,24 @@
         <%= f.label :title %><br>
         <%= f.text_field :title %>
       </div>
+
       <div class="field">
         <%= f.label :body %><br>
         <%= f.text_area :body %>
       </div>
+
+
+      <% if policy(@post).publish? %>
+        <div class="field">
+          <%= f.label :published, "Published" %>
+          <%= f.check_box :published %>
+        </div>
+      <% end %>
+
       <div class="actions">
         <%= f.submit %>
       </div>
+
+      
+
     <% end %>

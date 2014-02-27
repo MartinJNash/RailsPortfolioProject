@@ -22,6 +22,8 @@
       <p><b>By:</b> <%= @post.author.email %></p>
     </div>
 
+    <p id="status"><b>Status: </b><%= @post.published? ? "Published" : "Unpublished" %></p>
+
 
   </div>
 </div>

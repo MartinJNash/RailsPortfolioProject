@@ -15,9 +15,11 @@
 
 
 
-<div class="row extra-padding-top">
-  <div class="small-12 columns">
-    <%= link_to 'New Post', new_post_path %>
+<% if policy(Post).publish? %>
+  <div class="row extra-padding-top">
+    <div class="small-12 columns">
+      <%= link_to 'New Post', new_post_path %>
+    </div>
   </div>
-</div>
+<% end %>
 

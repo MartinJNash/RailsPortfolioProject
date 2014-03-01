@@ -33,3 +33,9 @@ pub:
   body: "Great post for all!"
   author: author
   published: true
+
+editorpost:
+  title: "Boss wrote this"
+  body: "Like a boss"
+  author: editor
+  published: true

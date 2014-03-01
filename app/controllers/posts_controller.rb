@@ -5,10 +5,6 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    # @posts = Post.all
-    # if current_user && current_user.author?
-    #   @posts = @posts.where(author_id: current_user.id)
-    # end
     @posts = policy_scope(Post)
   end
 
@@ -30,7 +26,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    current_user.posts << @post
+    @post.author = current_user
 
     respond_to do |format|
       if @post.save
@@ -62,7 +58,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to posts_url, notice: 'Post was successfully deleted.' }
       format.json { head :no_content }
     end
   end

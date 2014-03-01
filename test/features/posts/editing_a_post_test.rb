@@ -4,8 +4,11 @@ feature "Editing A Post" do
   scenario "submit updates to an existing post" do
 
     # Given an existing post
-    sign_in
-    visit post_path(posts(:one))
+    the_author = users(:author)
+    the_post = the_author.posts.first
+    sign_in(the_author.role)
+
+    visit post_path(the_post)
 
     # When I click edit and submit changed data
     click_on "Edit"

@@ -5,10 +5,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-    if current_user.author?
-      @posts = @posts.where(author_id: current_user.id)
-    end
+    # @posts = Post.all
+    # if current_user && current_user.author?
+    #   @posts = @posts.where(author_id: current_user.id)
+    # end
+    @posts = policy_scope(Post)
   end
 
   # GET /posts/1

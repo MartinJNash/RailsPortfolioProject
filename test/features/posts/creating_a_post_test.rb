@@ -3,23 +3,26 @@ require "test_helper"
 feature "Creating a post" do
   scenario "submit form data to create new post" do
 
-    the_post = posts(:class)
-    the_author = the_post.author
+    # the_post = posts(:class)
+    post_title = "MY NEW TITLE"
+    post_body = "MY NEW BODY"
+    the_author = users(:author)
 
     # Given an authorized user completes a new post form
     sign_in(the_author.role)
     visit new_post_path
-    fill_in "Title", with: the_post.title
-    fill_in "Body", with: the_post.body
+    fill_in "Title", with: post_title
+    fill_in "Body", with: post_body
 
     # When I submit the form
     click_on "Create Post"
 
     # Then a new post should be created and displayed
-    page.text.must_include the_post.title
-    page.text.must_include the_post.body
+    page.text.must_include post_title
+    page.text.must_include post_body
     page.has_css? "#author"
     page.text.must_include the_author.email
+
   end
 
 

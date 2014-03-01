@@ -23,6 +23,7 @@ end
 group :test do
   gem 'launchy'
   gem 'minitest-rails-capybara'
+  gem 'selenium-webdriver'
 end
 
 group :production do

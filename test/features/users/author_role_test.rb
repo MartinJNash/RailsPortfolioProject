@@ -7,6 +7,9 @@ feature "As an author" do
     @author = users(:author)
     @other_user = users(:one)
     sign_in(@author.role)
+
+    @post_title = "MY NEW POST"
+    @post_body = "MY NEW BODY"
   end
 
   scenario "I want to only see my posts, so I can focus on my work" do
@@ -22,41 +25,21 @@ feature "As an author" do
 
   scenario "I want to create posts, so I can share my great ideas with the world" do
 
-    new_title = "MY NEW POST"
-    new_body = "MY NEW BODY"
-
     # When I fill out a new post form and hit submit
-    visit new_post_path
-    fill_in "Title", with: new_title
-    fill_in "Body", with: new_body
-    click_on "Create Post"
+    make_new_post(@post_title, @post_body)
 
     # Then the post should be successfully created
-    page.must_have_content /success/i
-    page.must_have_content new_title
-    page.must_have_content new_body
-
+    check_page_content [/success/i, @post_title, @post_body]
   end
 
   scenario "I want to edit posts, so I can fix typos" do
-    
-    new_title = "MY NEW POST"
-    new_body = "MY NEW BODY"
 
     # When I am on the page to edit my post
     first_post = @author.posts.first
-    visit edit_post_path(first_post)
-
-    # And submit the edit form
-    fill_in "Title", with: new_title
-    fill_in "Body", with: new_body
-    click_on "Update Post"
+    edit_existing_post(first_post, @post_title, @post_body)
 
     # Then the post should be updated successfully
-    page.must_have_content /success/i
-    page.must_have_content new_title
-    page.must_have_content new_body
-
+    check_page_content [/success/i, @post_title, @post_body]
   end
 
   scenario "I should not be able to delete posts, so I can give the editor full editorial control" do

@@ -59,8 +59,6 @@ feature "As an editor" do
 
     # save_and_open_page
     click_on "Delete"
-    puts page.source
-    save_and_open_page
 
     check_page_content [/deleted/i]
   end

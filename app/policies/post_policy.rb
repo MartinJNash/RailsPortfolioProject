@@ -3,10 +3,11 @@ class PostPolicy < ApplicationPolicy
 
   class Scope < Struct.new(:user, :scope)
     def resolve
-      if user && user.author?
-        scope.where(author_id: user.id)
+      if user
+        return scope.where(author_id: user.id) if user.author?
+        return scope.all if user.editor?
       else
-        scope.all
+        scope.where(published: true)
       end
     end
   end

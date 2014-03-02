@@ -39,3 +39,9 @@ editorpost:
   body: "Like a boss"
   author: editor
   published: true
+
+draft:
+  title: "Work in progress"
+  body: "Not ready for public viewing"
+  author: author
+  published: false

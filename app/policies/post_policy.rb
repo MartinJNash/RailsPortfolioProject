@@ -6,9 +6,8 @@ class PostPolicy < ApplicationPolicy
       if user
         return scope.where(author_id: user.id) if user.author?
         return scope.all if user.editor?
-      else
-        scope.where(published: true)
       end
+      scope.where(published: true)
     end
   end
 

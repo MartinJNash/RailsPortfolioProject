@@ -3,7 +3,7 @@
   <div class="small-12 columns">
     <h4>Recent Blog Posts</h4>
     <ul class="small-block-grid-2 medium-block-grid-3">
-      <% Post.limit(3).each do |post| %>
+      <% Post.published.limit(3).each do |post| %>
         <li>
           <div class="panel">
             <h5><a href="<%= post_path(post) %>"><%= post.title %></a></h5>

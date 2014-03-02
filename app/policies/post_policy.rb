@@ -18,22 +18,29 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    @post.author == @user
+    return false if @user.nil?
+    @post.author == @user || @user.editor?
   end
 
   def create?
-    @user && @user.author?
+    return false if @user.nil?
+    @user.author? || @user.editor?
   end
 
   def publish?
-    @user && @user.editor?
+    return false if @user.nil?
+    @user.editor?
   end
 
-  def delete?
-    @user && @user.editor?
+  def destroy?
+    return false if @user.nil?
+    @user.editor?
   end
+
+
 
   def permitted_attributes
+    return [] if user.nil?
     attributes = [:title, :body]
     attributes << [:published] if @user.editor?
     attributes

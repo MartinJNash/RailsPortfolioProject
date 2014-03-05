@@ -37,4 +37,8 @@ Portfolio::Application.configure do
 
   # Blow up assets
   config.assets.debug = true
+
+
+  config.action_controller.action_on_unpermitted_parameters = :raise
+
 end

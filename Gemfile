@@ -16,6 +16,11 @@ gem 'simplecov', '~> 0.7.1'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'figaro'
+gem 'omniauth-twitter'
+
+gem 'pry'
+
 group :doc do
   gem 'sdoc', require: false
 end

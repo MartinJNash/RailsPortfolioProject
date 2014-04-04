@@ -1,0 +1,9 @@
+positive:
+  content: 'cool post bro'
+  approved: true
+  commentable: one (Post)
+
+negative:
+  content: 'derpa derpa suck'
+  approved: false
+  commentable: one (Post)

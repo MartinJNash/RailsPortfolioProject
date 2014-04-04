@@ -22,8 +22,12 @@
     <hr>
 
     <h3>Comments</h3>
+
+    <% if policy(Comment).create? %>
     <%= render 'comments/commentable_comment_fields', commentable: @post %>
     <br><br>
+    <% end %>
+
     <%= render 'comments/comments_for_commentable', commentable: @post %>
 
 

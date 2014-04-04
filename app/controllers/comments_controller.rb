@@ -3,10 +3,10 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
 
-    if @comment.save!
+    if @comment.save
       redirect_to request.referer, notice: "Successfully created comment!"
     else
-      redirect_to request.referer, notice: "BAD TIMES!"
+      redirect_to request.referer, notice: "Couldn't create comment."
     end
   end
 

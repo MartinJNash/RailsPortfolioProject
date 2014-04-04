@@ -13,17 +13,10 @@
   <body class="<%= params[:controller] %>">
 
     <%= render 'layouts/header' %>
-
-    <% flash.each do |key, value| %>
-      <div class="row">
-        <div class="alert-box round <%= flash_class(key) %>">
-          <%= value %>
-        </div>
-      </div>
-    <% end %>
-
-
+    <%= render 'layouts/flash_banner' %>
     <%= render 'layouts/login_logout_links' %>
+
+
     <%= yield %>
 
   </body>

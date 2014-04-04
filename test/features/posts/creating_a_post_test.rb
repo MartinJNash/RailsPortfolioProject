@@ -9,7 +9,7 @@ feature "Creating a post" do
     the_author = users(:author)
 
     # Given an authorized user completes a new post form
-    sign_in(the_author.role)
+    test_sign_in(the_author.role)
     visit new_post_path
     fill_in "Title", with: post_title
     fill_in "Body", with: post_body
@@ -37,7 +37,7 @@ feature "Creating a post" do
   end
 
   scenario "authors can't publish" do
-    sign_in(:author)
+    test_sign_in(:author)
     visit new_post_path
     page.wont_have_field 'Published'
   end
@@ -45,7 +45,7 @@ feature "Creating a post" do
   scenario "editors can publish" do
     
     # Given I am logged in as an editor
-    sign_in(:editor)
+    test_sign_in(:editor)
     visit new_post_path
 
     # I can see the published checkbox

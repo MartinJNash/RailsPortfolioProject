@@ -16,6 +16,23 @@
     </p>
 
 
+    <%= form_for [@post, @comment = Comment.new] do |f| %>
+      <%= f.label :content, "Content" %>
+      <%= f.text_field :content %>
+
+      <%= f.hidden_field :commentable_id, value: @post.id %>
+      <%= f.hidden_field :commentable_type, value: @post.class.to_s %>
+
+      <%= f.submit "Comment", data: { :disable_with => 'Commenting...' } %>
+    <% end %>
+
+    <% @post.comments.each do |comment| %>
+      <div class="comment">
+        <%= comment.content %>
+      </div>
+    <% end %>
+
+
     <% if policy(@post).update? %>
       <%= link_to 'Edit', edit_post_path(@post) %> |
     <% end %>

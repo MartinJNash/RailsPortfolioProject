@@ -22,6 +22,8 @@ gem 'omniauth-twitter'
 
 gem 'pry'
 
+gem 'turn'
+
 group :doc do
   gem 'sdoc', require: false
 end

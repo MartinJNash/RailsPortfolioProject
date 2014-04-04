@@ -10,31 +10,43 @@
     <h2>
       <%= @post.title %>
     </h2>
+    
+    <div id="author">
+      <p><b>By:</b> <%= @post.author.email %></p>
+    </div>
 
     <p>
       <%= simple_format @post.body %>
     </p>
 
+    <hr>
 
+    <h3>Comments</h3>
     <%= render 'comments/commentable_comment_fields', commentable: @post %>
+    <br><br>
     <%= render 'comments/comments_for_commentable', commentable: @post %>
 
 
-    <% if policy(@post).update? %>
-      <%= link_to 'Edit', edit_post_path(@post) %> |
+    
+    <% if policy(@post).update? || policy(@post).destroy? %>
+      
+      <section class="editing">
+
+        <% if policy(@post).update? %>
+          <%= link_to 'Edit', edit_post_path(@post) %> |
+        <% end %>
+
+        <% if policy(@post).destroy? %>
+          <%= link_to 'Delete', post_path(@post), method: :delete %> |
+        <% end %>
+
+        <% if policy(@post).update? %>
+          <p id="status"><b>Status: </b><%= @post.published? ? "Published" : "Unpublished" %></p>
+        <% end %>
+      </section>
+
     <% end %>
 
-    <% if policy(@post).destroy? %>
-      <%= link_to 'Delete', post_path(@post), method: :delete %> |
-    <% end %>
-
-    <%= link_to 'Back', posts_path %>
-
-    <div id="author">
-      <p><b>By:</b> <%= @post.author.email %></p>
-    </div>
-
-    <p id="status"><b>Status: </b><%= @post.published? ? "Published" : "Unpublished" %></p>
 
 
   </div>

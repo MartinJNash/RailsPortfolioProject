@@ -40,13 +40,19 @@
           <%= link_to 'Edit', edit_post_path(@post) %> |
         <% end %>
 
+        <% if policy(@post).update? %>
+          <b>Status: </b><%= @post.published? ? "Published" : "Unpublished" %>
+        <% end %>
+
         <% if policy(@post).destroy? %>
           <%= link_to 'Delete', post_path(@post), method: :delete %> |
         <% end %>
-
-        <% if policy(@post).update? %>
-          <p id="status"><b>Status: </b><%= @post.published? ? "Published" : "Unpublished" %></p>
+  
+        <p><%= @post.comments.unapproved.count %> unapproved comments</p>
+        <% if @post.comments.unapproved.count > 0 %>
+          <%= link_to 'review comments', post_comments_path(@post) %>
         <% end %>
+
       </section>
 
     <% end %>

@@ -1,0 +1,19 @@
+positive:
+  content: 'cool post bro'
+  approved: true
+  commentable: one (Post)
+
+negative:
+  content: 'derpa derpa suck'
+  approved: false
+  commentable: one (Post)
+
+off_topic:
+  content: 'Ducks are nice.'
+  approved: false
+  commentable: one (Post)
+
+spam:
+  content: 'Russian brides for you!'
+  approved: false
+  commentable: one (Post)

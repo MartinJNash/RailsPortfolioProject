@@ -6,7 +6,7 @@ feature "Editing A Post" do
     # Given an existing post
     the_author = users(:author)
     the_post = the_author.posts.first
-    sign_in(the_author.role)
+    test_sign_in(the_author.role)
 
     visit post_path(the_post)
 

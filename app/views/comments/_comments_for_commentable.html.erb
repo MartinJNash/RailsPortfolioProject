@@ -1,0 +1,11 @@
+  <div id='comments' class='row'>
+    <div class="columns large-12">
+      
+      <% @post.comments.approved.each do |comment| %>
+        <div id="<%= dom_id(comment) %>" class="comment panel">
+          <p><%= comment.content %></p>
+        </div>
+      <% end %>
+  
+    </div>
+  </div>

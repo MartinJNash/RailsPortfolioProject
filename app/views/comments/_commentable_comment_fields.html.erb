@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="columns large-12">
+    
+      <%= form_for [commentable, @comment = Comment.new] do |f| %>
+        <%= f.label :content, "Content" %>
+        <%= f.text_area :content %>
+
+        <%= f.hidden_field :commentable_id, value: commentable.id %>
+        <%= f.hidden_field :commentable_type, value: commentable.class.to_s %>
+
+        <%= f.submit "Comment", data: { :disable_with => 'Commenting...' } %>
+      <% end %>
+
+  </div>
+</div>
+

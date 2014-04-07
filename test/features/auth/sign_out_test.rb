@@ -5,7 +5,7 @@ feature "As a user, I want to sign out to protect my privacy" do
   scenario "sign out of service" do
 
     # Given I have a signed in user
-    sign_in
+    test_sign_in
 
     # When I click on sign out
     click_on "Sign out"

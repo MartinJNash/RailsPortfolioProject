@@ -4,7 +4,7 @@ feature "Deleting A Post" do
   scenario "post is deleted with a click" do
 
     # Given I have a bad post on my list of posts
-    sign_in
+    test_sign_in
     visit posts_path
 
     # When I click the delete button

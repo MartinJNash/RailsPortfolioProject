@@ -4,7 +4,7 @@ feature "As an editor" do
 
   before do
     @editor = users(:editor)
-    sign_in(@editor.role)
+    test_sign_in(@editor.role)
     @post_title = "Catchy title"
     @post_body  = "A nice body"
   end

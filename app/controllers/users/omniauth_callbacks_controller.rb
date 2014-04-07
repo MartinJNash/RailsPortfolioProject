@@ -13,6 +13,7 @@ module Users
     end
     alias_method :twitter, :all
     alias_method :facebook, :all
+    alias_method :github, :all
     
   end
 end

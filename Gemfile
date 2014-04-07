@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'figaro'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 
 gem 'pry'
 

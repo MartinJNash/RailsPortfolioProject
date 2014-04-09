@@ -1,3 +1,5 @@
+
+
 <div class="row">
   <div class="columns large-12">
     
@@ -11,9 +13,10 @@
     <p><%= pluralize @comments.unapproved.count, 'unapproved comment' %></p>
 
     <% @comments.unapproved.each do |comment| %>
-      <p>
-        <%= comment.content %>  || <%= link_to 'approve!', post_approve_comment_path(@commentable, comment), method: :patch, class: 'comment_approve' %>
-      </p>
+      
+      <%= button_to 'approve!', post_comment_path(@commentable, comment, comment: {approved: true}), method: :patch, class: 'comment_approve'%>
+
+
     <% end %>
 
   </div>

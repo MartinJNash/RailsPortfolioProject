@@ -5,7 +5,10 @@ Portfolio::Application.routes.draw do
     resources :comments, only: [:index, :create, :update]
   end
   
-  resources :projects
+  resources :projects do
+    resources :comments, only: [:create]
+  end
+
 
 
   root "home#index"

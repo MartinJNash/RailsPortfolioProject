@@ -5,9 +5,6 @@
         <%= f.label :content, "Content" %>
         <%= f.text_area :content %>
 
-        <%= f.hidden_field :commentable_id, value: commentable.id %>
-        <%= f.hidden_field :commentable_type, value: commentable.class.to_s %>
-
         <%= f.submit "Comment", data: { :disable_with => 'Commenting...' } %>
       <% end %>
 

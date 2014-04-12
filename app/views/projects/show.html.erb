@@ -1,5 +1,17 @@
+<div class="row">
+  <div class="columns">
+    <h2><%= @project.name %></h2>
+    <p>Technologies used: <%= @project.technologies_used %></p>
 
 
-<h2><%= @project.name %></h2>
-<p>Technologies used: <%= @project.technologies_used %></p>
-<%= link_to "Delete", @project, method: :delete, data: {confirm: "Do you really want to delete this project?"} %>
+    <%= link_to "Delete", @project, method: :delete, data: {confirm: "Do you really want to delete this project?"} %>
+
+    <hr>
+
+    <% if policy(Comment).create? %>
+      <%= render 'comments/commentable_comment_fields', commentable: @project %>
+    <% end %>
+
+  </div>
+</div>
+

@@ -2,7 +2,8 @@
   <div class="columns small-12">    
 
     <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <h5><%= link_to "Sign out", destroy_user_session_path, method: :delete %></h5>
+      <h5><%= link_to 'edit user info', edit_user_registration_path %></h5>
     
     <% else %>
       <h5><%= link_to "Create account", new_user_registration_path %></h5>

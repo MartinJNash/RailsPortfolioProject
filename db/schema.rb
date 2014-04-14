@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227050319) do
+ActiveRecord::Schema.define(version: 20140407014634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.string   "author"
+    t.string   "author_url"
+    t.string   "author_email"
+    t.boolean  "approved",         default: false
+    t.string   "referrer"
+    t.string   "user_agent"
+    t.string   "user_ip"
+    t.text     "content"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -48,6 +63,9 @@ ActiveRecord::Schema.define(version: 20140227050319) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "role"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "handle"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,0 +1,25 @@
+
+
+<div class="row">
+  <div class="columns large-12">
+    
+    <% if @comments.approved.count > 0 %>
+      <h2>Approved</h2>
+      <%= pluralize @comments.approved.count, 'approved comment' %>
+    <% end %>
+
+
+    <h4>Unapproved</h4>
+    <p><%= pluralize @comments.unapproved.count, 'unapproved comment' %></p>
+
+    <% @comments.unapproved.each do |comment| %>
+      
+      <%= button_to 'approve!', post_comment_path(@commentable, comment, comment: {approved: true}), method: :patch, class: 'comment_approve'%>
+
+
+    <% end %>
+
+  </div>
+</div>
+
+

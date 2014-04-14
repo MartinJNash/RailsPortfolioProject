@@ -6,7 +6,7 @@ feature "As an author" do
   before do
     @author = users(:author)
     @other_user = users(:one)
-    sign_in(@author.role)
+    test_sign_in(@author.role)
 
     @post_title = "MY NEW POST"
     @post_body = "MY NEW BODY"

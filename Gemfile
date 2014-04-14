@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.4'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
@@ -11,10 +11,20 @@ gem 'mina'
 gem 'minitest-rails'
 gem 'pg'
 gem 'pundit'
+gem 'rake'
 gem 'sass-rails', '~> 4.0.0'
 gem 'simplecov', '~> 0.7.1'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+
+gem 'figaro'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+
+gem 'pry'
+
+gem 'turn'
 
 group :doc do
   gem 'sdoc', require: false

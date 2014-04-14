@@ -1,11 +1,21 @@
-## Portfolio
+# Portfolio
 
-A project to learn rails and show off my skills at the same time.
+![Build Status](https://api.travis-ci.org/MartinJNash/RailsPortfolioProject.svg)
 
-Posts#index
+This project was built as part of the Univeristy of Washington's Certificate in Ruby Application Programming.
 
-![](screenshots/ss2.png)
+## Technologies Used
 
-Passing tests
+- Authentication with devise
+	- Login with social networks: Twitter, Facebook, Github
+- Authorization with pundit
+- Polymorhpic associations
 
-![Pasing Tests](screenshots/ss1.png)
+## Testing
+
+- Minitest specs
+- Capybara
+
+## UI
+
+- Layout with Zurb foundation

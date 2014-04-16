@@ -1,0 +1,16 @@
+
+
+<%= div_for project do  %>
+  
+  <h3><%= project.name %></h3>
+  <p><%= project.technologies_used %></p>
+
+  <% if policy(project).update? %>
+    <div class="nav">
+      <%= link_to 'Show', project %>
+      <%= link_to 'Edit', edit_project_path(project) %>
+      <%= link_to 'Destroy', project, method: :delete, data: {confirm: "Really delete this project?"}  %>
+    </div>
+  <% end %>
+
+<% end %>

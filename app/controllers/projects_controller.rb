@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
   def destroy
     if @project.destroy
       flash[:notice] = "Successfully deleted project."
-      redirect_to posts_path
+      redirect_to projects_path
     end
   end
 

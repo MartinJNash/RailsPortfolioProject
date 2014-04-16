@@ -1,16 +1,21 @@
-<div class="row">
-  <div class="columns small-12">    
+<section id="login_logout_section">
+  
+  <div class="row">
+    <div class="columns small-12">    
 
-    <% if user_signed_in? %>
-      <h5><%= link_to "Sign out", destroy_user_session_path, method: :delete %></h5>
-      <h5><%= link_to 'edit user info', edit_user_registration_path %></h5>
-    
-    <% else %>
-      <h5><%= link_to "Create account", new_user_registration_path %></h5>
-      <h5><%= link_to "Sign in", new_user_session_path %></h5>
-      <h5><%= link_to "Sign in with Twitter", omniauth_authorize_path(:user, :twitter ) %><br /></h5>
-    
-    <% end %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %> | 
+        <%= link_to 'edit user info', edit_user_registration_path %>
+      
+      <% else %>
+        <%= link_to "Create account", new_user_registration_path %> | 
+        <%= link_to "Sign in", new_user_session_path %> | 
+        <%= link_to "Sign in with Twitter", omniauth_authorize_path(:user, :twitter ) %>
+      
+      <% end %>
 
+    </div>
   </div>
-</div>
+  
+</section>
+

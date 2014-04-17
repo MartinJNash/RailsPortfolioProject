@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
 
       format.js do
         unless @project.save
-          render text: @project.errors.full_messages.join, status: :unprocessable_entity 
+          render text: @project.errors.full_messages.join("\n"), status: :unprocessable_entity 
         end
       end
 

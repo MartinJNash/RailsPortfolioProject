@@ -9,7 +9,7 @@
     <div class="nav">
       <%= link_to 'Show', project %>
       <%= link_to 'Edit', edit_project_path(project) %>
-      <%= link_to 'Destroy', project, method: :delete, data: {confirm: "Really delete this project?"}  %>
+      <%= link_to 'Destroy', project, method: :delete, data: {confirm: "Really delete this project?"}, remote: true  %>
     </div>
   <% end %>
 

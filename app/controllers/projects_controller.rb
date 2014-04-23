@@ -51,8 +51,18 @@ class ProjectsController < ApplicationController
 
   def destroy
     if @project.destroy
-      flash[:notice] = "Successfully deleted project."
-      redirect_to projects_path
+
+      respond_to do |format|
+        format.js do
+          # binding.pry
+        end
+
+        format.html do
+          flash[:notice] = "Successfully deleted project."
+          redirect_to projects_path
+        end
+      end
+
     end
   end
 

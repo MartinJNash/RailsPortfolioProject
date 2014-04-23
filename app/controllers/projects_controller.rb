@@ -12,13 +12,27 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    if @project.save
-      flash[:notice] = "Successfully created project"
-      redirect_to @project
-    else
-      flash.now[:error] = "Project could not be saved"
-      render :new
+
+    respond_to do |format|
+
+      format.html do
+        if @project.save
+          flash[:notice] = "Successfully created project"
+          redirect_to @project
+        else
+          flash.now[:error] = "Project could not be saved"
+          render :new
+        end
+      end
+
+      format.js do
+        unless @project.save
+          render text: @project.errors.full_messages.join("\n"), status: :unprocessable_entity 
+        end
+      end
+
     end
+
   end
 
   def show
@@ -37,8 +51,18 @@ class ProjectsController < ApplicationController
 
   def destroy
     if @project.destroy
-      flash[:notice] = "Successfully deleted project."
-      redirect_to posts_path
+
+      respond_to do |format|
+        format.js do
+          # binding.pry
+        end
+
+        format.html do
+          flash[:notice] = "Successfully deleted project."
+          redirect_to projects_path
+        end
+      end
+
     end
   end
 

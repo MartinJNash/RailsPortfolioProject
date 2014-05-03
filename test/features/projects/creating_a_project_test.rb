@@ -2,18 +2,18 @@ require "test_helper"
 
 feature "Creating a project" do
   scenario "create a new project" do
-    visit projects_path
+    visit new_project_path
 
-    click_on "New Project"
+    app_name = "Cool New App"
+    technologies = "Ruby, Rails, Zurb Foundation, HTML5"
 
-    fill_in "Name", with: "Cool New App"
-    fill_in "Technologies used", with: "Ruby, Rails, Zurb Foundation, HTML5"
+    fill_in "Name", with: app_name
+    fill_in "Technologies used", with: technologies
     click_on "Create Project"
 
-    page.text.must_include "Cool New App"
-    page.text.must_include "Zurb Foundation"
-    page.text.must_include "uccessfully"
-    page.text.must_include "created"
+    page.status_code.must_equal 200
+    page.text.must_include app_name
+    page.text.must_include technologies
   end
 
 
@@ -33,4 +33,16 @@ feature "Creating a project" do
     page.text.must_include "Are you sure you didn't use any technologies?"
   end
 
+  scenario "new project with image" do
+    visit new_project_path
+    page.must_have_css '#project_image'
+    
+    file = File.join(Rails.root, 'test/fixtures/files/test_image.png')
+    attach_file 'Image', file
+
+
+    click_on 'Create Project'
+    page.status_code.must_equal 200
+  end
+ 
 end

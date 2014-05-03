@@ -1,11 +1,14 @@
 require "test_helper"
 
 feature "As a user, I want to sign out to protect my privacy" do
-  
-  scenario "sign out of service" do
+ 
+  include Warden::Test::Helpers
+  Warden.test_mode!
 
-    # Given I have a signed in user
-    test_sign_in
+  scenario "sign out of service", js: true do
+
+    login_as users(:editor)
+    visit root_path
 
     # When I click on sign out
     click_on "Sign out"

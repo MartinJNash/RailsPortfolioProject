@@ -5,5 +5,8 @@ require File.expand_path('../config/application', __FILE__)
 
 Portfolio::Application.load_tasks
 
-# rake minitest will include tests in test/features
-MiniTest::Rails::Testing.default_tasks << "features"
+Rails::TestTask.new("minitest:features" => "test:prepare") do |t|
+  t.pattern = "test/features/**/*_test.rb"
+end
+
+Rake::Task["test:run"].enhance ["minitest:features"]

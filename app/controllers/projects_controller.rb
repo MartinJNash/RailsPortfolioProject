@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 
+  protect_from_forgery
   before_action :set_project, only: [:show, :edit, :update, :destroy] 
 
   def index
@@ -73,7 +74,7 @@ private
   end
 
   def project_params
-    params.require(:project).permit(:name, :technologies_used)
+    params.require(:project).permit(:name, :technologies_used, :image)
   end
 
 end

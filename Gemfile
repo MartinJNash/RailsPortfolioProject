@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.4'
+gem 'rails', '~> 4.1.0'
 
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
 gem 'mina'
-gem 'minitest-rails'
+gem 'rmagick', require: false
 gem 'pg'
 gem 'pundit'
 gem 'rake'
@@ -24,12 +25,12 @@ gem 'omniauth-github'
 
 gem 'pry'
 
-gem 'turn'
 
 group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'minitest-rails'
 group :test do
   gem 'launchy'
   gem 'minitest-rails-capybara'

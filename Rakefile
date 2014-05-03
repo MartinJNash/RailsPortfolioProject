@@ -5,3 +5,8 @@ require File.expand_path('../config/application', __FILE__)
 
 Portfolio::Application.load_tasks
 
+Rails::TestTask.new("minitest:features" => "test:prepare") do |t|
+  t.pattern = "test/features/**/*_test.rb"
+end
+
+Rake::Task["test:run"].enhance ["minitest:features"]

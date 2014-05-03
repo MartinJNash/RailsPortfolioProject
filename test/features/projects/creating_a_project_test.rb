@@ -4,14 +4,16 @@ feature "Creating a project" do
   scenario "create a new project" do
     visit new_project_path
 
-    fill_in "Name", with: "Cool New App"
-    fill_in "Technologies used", with: "Ruby, Rails, Zurb Foundation, HTML5"
+    app_name = "Cool New App"
+    technologies = "Ruby, Rails, Zurb Foundation, HTML5"
+
+    fill_in "Name", with: app_name
+    fill_in "Technologies used", with: technologies
     click_on "Create Project"
 
-    page.text.must_include "Cool New App"
-    page.text.must_include "Zurb Foundation"
-    page.text.must_include "uccessfully"
-    page.text.must_include "created"
+    page.status_code.must_equal 200
+    page.text.must_include app_name
+    page.text.must_include technologies
   end
 
 

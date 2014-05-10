@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  
+  <body class="Mail">
+
+
+  <header style="padding: 20px 0px; background-color: rgba(1,1,1,0.6);">
+    <div class="row">
+      <div class="columns">
+        <h1>Basic Contact Email.</h1>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="mail_content">
+    <div class="row">
+      <div class="columns medium-6">
+        <h3>Read me please</h3>
+        <p><b>Name: </b><%= @name %></p>
+        <p><b>Email: </b><%= @email %></p>
+        Body: <%= @body %>
+      </div>
+
+      <div class="columns medium-6">
+        <h3>MORE STUFF!</h3>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  </body>
+</html>

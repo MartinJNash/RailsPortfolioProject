@@ -9,7 +9,7 @@ Portfolio::Application.routes.draw do
     resources :comments, only: [:create]
   end
 
-
+  resources :contact_messages, only: [:create]
 
   root "home#index"
 end

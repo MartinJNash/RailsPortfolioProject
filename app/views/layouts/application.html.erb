@@ -18,5 +18,19 @@
 
     <%= yield %>
 
+  <div class="row">
+    <div class="columns large-6">
+      <h3>Contact</h3>
+      <%= form_for ContactMessage.new do |f| %>
+        <%= f.text_field :email, placeholder: 'email' %>
+        <%= f.text_field :name, placeholder: 'name' %>
+        <%= f.text_area :body, placeholder: 'body' %>
+        <%= f.submit "Send" %>
+      <% end %>
+    </div>
+  </div>
+
+  
+  
   </body>
 </html>

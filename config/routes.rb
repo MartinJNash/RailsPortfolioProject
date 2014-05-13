@@ -11,5 +11,9 @@ Portfolio::Application.routes.draw do
 
   resources :contact_messages, only: [:create]
 
+  namespace :inbound_email do
+    resources :posts, only: [:create]
+  end
+
   root "home#index"
 end

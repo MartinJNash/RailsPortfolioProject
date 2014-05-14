@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
+      CommentMailer.delay_for(5.seconds).new_comment_email(@comment, @commentable)
       redirect_to request.referer, notice: "Successfully created comment!"
     else
       redirect_to request.referer, notice: "Couldn't create comment."

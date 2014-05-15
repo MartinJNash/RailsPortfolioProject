@@ -2,7 +2,11 @@ class ContactMessagesController < ApplicationController
 
   def create
     message = ContactMessage.new(params[:contact_message])
-    mail = ContactMessageMailer.basic_contact_email(message).deliver
+    if message.valid?
+      ContactMessageMailer.delay.basic_contact_email(message)
+    else
+      flash[:alert] = 'Invalid message'
+    end
     redirect_to request.referrer
   end
 

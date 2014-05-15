@@ -25,7 +25,7 @@ def test_sign_in(role = :editor)
   visit new_user_session_path
   fill_in "Email", with: users(role).email
   fill_in "Password", with: 'password'
-  find("form").click_on "Sign in"
+  find("form.new_user").click_on "Sign in"
 end
 
 

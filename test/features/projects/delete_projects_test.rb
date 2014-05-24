@@ -6,12 +6,13 @@ feature "Projects::DeletePosts" do
     test_sign_in
 
     # Given I am on the project's show page
-    visit project_path(projects(:ywk))
+    project = projects(:ywk)
+    visit project_path(project)
 
     # When I click on delete
     click_on "Destroy"
 
     # Then the post should be gone
-    page.text.must_include "Successfully deleted project."
+    page.text.wont_include project.technologies_used
   end
 end

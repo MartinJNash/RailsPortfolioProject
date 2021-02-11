@@ -27,6 +27,9 @@ gem 'postmark-mitt'
 
 gem 'pry'
 
+gem 'foreman'
+gem 'sidekiq'
+
 
 group :doc do
   gem 'sdoc', require: false

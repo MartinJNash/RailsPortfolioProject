@@ -1,0 +1,16 @@
+
+<h3>You have a new comment on <%= @commentable.class %> #<%= @commentable.id %></h3>
+<p><%= link_to polymorphic_url(@commentable), polymorphic_url(@commentable) %></p>
+
+<blink>
+  <h1 style='color: red;'>WARNING: THE FOLLWING IS A COMMENT</h1>
+</blink>
+
+<marquee behavior="" direction="">
+</marquee>
+
+<hr>
+
+<section style='background-color: #AAA; height: 500px; font-size: 50px;'>
+  <span style='color: green'><%= @comment.content %></span>
+</section>  
